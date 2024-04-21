@@ -14,12 +14,13 @@ const TimeSheet = ({ onCreateEntry }) => {
   const [totalHours, setTotalHours] = useState(0);
   const [accessToken, setAccessToken] = useState('');
 
-  const tokenUrl = window.config.tokenUrl;
+ 
   
   useEffect(() => {
     const fetchAccessToken = async () => {
       try {
         console.log('fetchAccessToken START');
+        const tokenUrl = window.config.tokenUrl;
         console.log('tokenUrl: '+tokenUrl);
         const response = await fetch(tokenUrl);
         if (!response.ok) {
@@ -34,13 +35,15 @@ const TimeSheet = ({ onCreateEntry }) => {
     };
 
     fetchAccessToken();
-  }, []);
+  },);
 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(process.env.REACT_APP_BACKEND_URL, {
+        console.log(accessToken);
+        const backendUrl = window.config.backendUrl;
+        const response = await fetch(backendUrl, {
           headers: {
             'Authorization': `Bearer ${accessToken}`
           }
@@ -57,7 +60,7 @@ const TimeSheet = ({ onCreateEntry }) => {
     };
   
     fetchData();
-  }, []);
+  }, [accessToken]);
   
 
   useEffect(() => {
