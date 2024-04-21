@@ -38,7 +38,7 @@ const TimeSheet = ({ onCreateEntry }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(process.env.REACT_APP_BASE_URL, {
+        const response = await fetch(process.env.REACT_APP_BACKEND_URL, {
           headers: {
             'Authorization': `Bearer ${accessToken}`
           }
