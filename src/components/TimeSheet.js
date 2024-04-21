@@ -17,7 +17,7 @@ const TimeSheet = ({ onCreateEntry }) => {
   useEffect(() => {
     const fetchAccessToken = async () => {
       try {
-        const response = await fetch('http://tokenservice-530965587:8081/auth');
+        const response = await fetch(process.env.REACT_TOKEN_URL);
         if (!response.ok) {
           throw new Error('Failed to fetch access token');
         }
