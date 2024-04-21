@@ -17,10 +17,12 @@ const TimeSheet = ({ onCreateEntry }) => {
   useEffect(() => {
     const fetchAccessToken = async () => {
       try {
+        console.log('fetchAccessToken START');
         const response = await fetch(process.env.REACT_TOKEN_URL);
         if (!response.ok) {
           throw new Error('Failed to fetch access token');
         }
+        console.log(response);
         const jsonData = await response.json();
         setAccessToken(jsonData.access_token);
       } catch (error) {
@@ -35,7 +37,6 @@ const TimeSheet = ({ onCreateEntry }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log('process.env: ' + process.env)
         const response = await fetch(process.env.REACT_APP_BASE_URL, {
           headers: {
             'Authorization': `Bearer ${accessToken}`
