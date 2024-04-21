@@ -14,16 +14,13 @@ const TimeSheet = ({ onCreateEntry }) => {
   const [totalHours, setTotalHours] = useState(0);
   const [accessToken, setAccessToken] = useState('');
 
-  const tokenUrl = window?.configs?.tokenUrl ? window.configs.tokenUrl : "/";
-
+  const tokenUrl = window.config.tokenUrl;
   
   useEffect(() => {
     const fetchAccessToken = async () => {
       try {
         console.log('fetchAccessToken START');
-
-
-        console.log('REACT_APP_TOKEN_URL: '+tokenUrl);
+        console.log('tokenUrl: '+tokenUrl);
         const response = await fetch(tokenUrl);
         if (!response.ok) {
           throw new Error('Failed to fetch access token');
