@@ -1,0 +1,41 @@
+/* TimeSheet.css */
+
+.time-sheet-container {
+    margin: 20px;
+  }
+  
+  .add-entry-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .add-entry-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .time-sheet-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #000000; /* Add border to the table */
+  }
+  
+  .time-sheet-table th,
+  .time-sheet-table td {
+    padding: 8px;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000; /* Add border between columns */
+  }
+  
+  .time-sheet-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .time-sheet-table tr:last-child td {
+    border-bottom: 1px solid #000000;
+  }
+  
