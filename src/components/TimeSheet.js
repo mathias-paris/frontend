@@ -18,8 +18,8 @@ const TimeSheet = ({ onCreateEntry }) => {
     const fetchAccessToken = async () => {
       try {
         console.log('fetchAccessToken START');
-        console.log('REACT_TOKEN_URL: '+process.env.REACT_TOKEN_URL);
-        const response = await fetch(process.env.REACT_TOKEN_URL);
+        console.log('REACT_TOKEN_URL: '+process.env.REACT_APP_TOKEN_URL);
+        const response = await fetch(process.env.REACT_APP_TOKEN_URL);
         if (!response.ok) {
           throw new Error('Failed to fetch access token');
         }
