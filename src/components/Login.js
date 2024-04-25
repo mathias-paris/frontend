@@ -14,7 +14,7 @@ const Login = ({ onLogin }) => {
 
   const handleLoginClick = () => {
     // Redirect user to WSO2 Choreo login page
-    window.location.href = '/login';
+    window.location.href = '/auth/login';
   };
 
   return (
